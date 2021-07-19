@@ -566,27 +566,4 @@ PIN_SUBCLASSING_RESTRICTED
 
 @end
 
-
-#pragma mark - Deprecated
-
-/**
- A callback block which provides only the cache as an argument
- */
-typedef void (^PINDiskCacheBlock)(PINDiskCache *cache);
-
-@interface PINDiskCache (Deprecated)
-- (void)lockFileAccessWhileExecutingBlock:(nullable PINCacheBlock)block __attribute__((deprecated));
-- (void)containsObjectForKey:(NSString *)key block:(PINDiskCacheContainsBlock)block __attribute__((deprecated));
-- (void)objectForKey:(NSString *)key block:(nullable PINDiskCacheObjectBlock)block __attribute__((deprecated));
-- (void)fileURLForKey:(NSString *)key block:(nullable PINDiskCacheFileURLBlock)block __attribute__((deprecated));
-- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key block:(nullable PINDiskCacheObjectBlock)block __attribute__((deprecated));
-- (void)removeObjectForKey:(NSString *)key block:(nullable PINDiskCacheObjectBlock)block __attribute__((deprecated));
-- (void)trimToDate:(NSDate *)date block:(nullable PINDiskCacheBlock)block __attribute__((deprecated));
-- (void)trimToSize:(NSUInteger)byteCount block:(nullable PINDiskCacheBlock)block __attribute__((deprecated));
-- (void)trimToSizeByDate:(NSUInteger)byteCount block:(nullable PINDiskCacheBlock)block __attribute__((deprecated));
-- (void)removeAllObjects:(nullable PINDiskCacheBlock)block __attribute__((deprecated));
-- (void)enumerateObjectsWithBlock:(PINDiskCacheFileURLBlock)block completionBlock:(nullable PINDiskCacheBlock)completionBlock __attribute__((deprecated));
-- (void)setTtlCache:(BOOL)ttlCache DEPRECATED_MSG_ATTRIBUTE("ttlCache is no longer a settable property and must now be set via initializer.");
-@end
-
 NS_ASSUME_NONNULL_END
